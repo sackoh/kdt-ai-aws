@@ -8,18 +8,18 @@ text = ['음악이 주가 된, 최고의 음악영화',
 
 class TestModelHandler(unittest.TestCase):
     def test_ml_model_handler(self):
-        predicted = ['긍정', '부정', '부정']
+        predicted = ['negative', 'negative', 'negative']
         ml_handler = MLModelHandler()
         for s, p in zip(text, predicted):
             result = ml_handler.handle(s)
-            self.assertEqual(result[0], p)
+            self.assertEqual(result[0][0], p)
 
     def test_dl_model_handler(self):
-        predicted = ['긍정', '부정', '긍정']
+        predicted = ['positive', 'negative', 'positive']
         ml_handler = MLModelHandler()
         for s, p in zip(text, predicted):
             result = ml_handler.handle(s)
-            self.assertEqual(result[0], p)
+            self.assertEqual(result[0][0], p)
 
 
 if __name__ == '__main__':

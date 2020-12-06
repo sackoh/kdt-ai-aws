@@ -4,7 +4,7 @@ from utils import clean_text
 
 class ModelHandler:
     def __init__(self):
-        self.id2label = {0: '부정', 1: '긍정'}
+        self.id2label = {0: 'negative', 1: 'positive'}
 
     def _clean_text(self, text):
         model_input = []
