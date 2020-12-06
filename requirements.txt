@@ -1,0 +1,8 @@
+numpy
+pandas
+transformers==3.5
+sklearn==0.23.1
+torch==1.6
+flask
+requests
+joblib
