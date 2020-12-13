@@ -1,5 +1,5 @@
 import unittest
-from model_original import MLModelHandler, DLModelHandler
+from model import MLModelHandler, DLModelHandler
 
 text = ['음악이 주가 된, 최고의 음악영화',
         '발연기 도저히 못보겠다 진짜 이렇게 연기를 못할거라곤 상상도 못했네',
