@@ -1,6 +1,6 @@
-import joblib
 import itertools
 from utils import clean_text
+
 
 class ModelHandler:
     def __init__(self):
@@ -20,48 +20,36 @@ class ModelHandler:
 
 
 class MLModelHandler(ModelHandler):
-    def __init__(self, vectorizer_path, model_path):
+    def __init__(self):
         super().__init__()
-        self.initialize(vectorizer_path, model_path)
+        self.initialize()
 
-    def initialize(self, vectorizer_path, model_path):
+    def initialize(self, ):
         # De-serializing model and loading vectorizer
-        self.vectorizer = joblib.load(vectorizer_path) 
-        self.model = joblib.load(model_path) 
+        
+        pass
 
     def preprocess(self, data):
-        # cleansing raw text        
-        cleaned_data = self._clean_text(data)
+        # cleansing raw text
 
         # vectorizing cleaned text
-        vectorized_data = self.vectorizer.transform(cleaned_data)
-        return vectorized_data
+
+        return data
 
     def inference(self, data):
         # get predictions from model as probabilities
-        model_output = self.model.predict_proba(data)[0]
-
-        return model_output
+        
+        return data
 
     def postprocess(self, data):
         # process predictions to predicted label and output format
-        
-        predict_index = data.argmax()
-        print(predict_index)
-        if predict_index == 1:
-            prediction = 'positive'
-        else:
-            prediction = 'negative'
-        score = data[predict_index]
-        result = {'label': prediction, 'score':score}
-        return result
+
+        return data
 
     def handle(self, data):
         # do above processes
-        data = self.preprocess(data)
-        model_output = self.inference(data)
-        result = self.postprocess(model_output)
-        return result
+
+        return data
 
 
 class DLModelHandler(ModelHandler):
@@ -69,7 +57,7 @@ class DLModelHandler(ModelHandler):
         super().__init__()
         self.initialize()
 
-    def initialize(self):
+    def initialize(self, ):
         pass
 
     def preprocess(self, data):
@@ -83,15 +71,3 @@ class DLModelHandler(ModelHandler):
 
     def handle(self, data):
         return data
-
-
-def get_ML_Handler():
-    ml_handler = MLModelHandler(vectorizer_path='model/ml_vectorizer.pkl',
-                                model_path='model/ml_model.pkl')
-    return ml_handler
-
-
-def get_DL_Handler():
-    return DLModelHandler()
-
-
