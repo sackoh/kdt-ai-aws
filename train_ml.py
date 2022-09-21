@@ -14,14 +14,15 @@ logger = logging.getLogger(__name__)
 def download_data(mode):
     base_url = f'https://raw.githubusercontent.com/e9t/nsmc/master/ratings_{mode}.txt'
     r = requests.get(base_url)
-    with open(f'ratings_{mode}.txt', 'wb') as w:
+    os.makedirs('data', exist_ok=True)
+    with open(f'data/ratings_{mode}.txt', 'wb') as w:
         w.write(r.content)
     logger.info("Downloaded from {}".format(base_url))
 
 
 def train_and_evaluate():
-    train = pd.read_csv('ratings_train.txt', sep='\t').drop('id', axis=1).fillna('')
-    test = pd.read_csv('ratings_test.txt', sep='\t').drop('id', axis=1).fillna('')
+    train = pd.read_csv('data/ratings_train.txt', sep='\t').drop('id', axis=1).fillna('')
+    test = pd.read_csv('data/ratings_test.txt', sep='\t').drop('id', axis=1).fillna('')
     X_train, y_train = train['document'].apply(clean_text), train['label']
     X_test, y_test = test['document'].apply(clean_text), test['label']
 

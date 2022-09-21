@@ -6,3 +6,6 @@ torch==1.6
 flask
 requests
 joblib
+fastapi
+uvicorn
+pydantic
