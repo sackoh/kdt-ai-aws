@@ -6,6 +6,9 @@ import uvicorn
 
 app = FastAPI()
 
+# assign model handler as global variable [2 LINES]
+
+
 class RequestModelString(BaseModel):
     """
     Example: '안녕하세요'
@@ -32,7 +35,7 @@ async def root():
     return {"message": "Hello World"}
 
 @app.post("/predict", response_model=ResponseModel)
-async def predict(request: Union[RequestModelString, RequestModelStringList], classifier: MLModelHandler = Depends(get_ML_Handler)):
+async def predict(request: Union[RequestModelString, RequestModelStringList]):
     text = request.text
     text = [text] if isinstance(text, str) else text
     do_fast = request.do_fast
