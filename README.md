@@ -1,5 +1,3 @@
-# 실습자료 Readme.md
-
 # kdt-ai-aws
 
 [4기] K-Digital Training: 프로그래머스 인공지능 데브코스
