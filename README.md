@@ -1,9 +1,7 @@
-kdt-ai-aws
-
 # K-Digital Training: 프로그래머스 인공지능 데브코스
 
-AWS를 활용한 인공지능 모델 배포 강의 실습 코드
-
+AWS를 활용한 인공지능 모델 배포 강의 실습
+<br><br>
 ## AWS 실습 개발환경 준비
 
 1. Miniconda를 설치합니다.
@@ -17,12 +15,13 @@ bash Miniconda3-latest-Linux-x86_64.sh
 2. 실습 repo를 다운로드합니다.
 
 ```bash
+sudo yum install git
+
 git clone https://github.com/sackoh/kdt-ai-aws
 
 cd kdt-ai-aws
 ```
-
-
+<br><br>
 ## 파이썬 패키지 설치
 
 - `requirements.txt`에 있는 실습에 필요한 라이브러리를 설치합니다.
@@ -30,7 +29,7 @@ cd kdt-ai-aws
 ```bash
 pip install -r requirements.txt
 ```
-
+<br><br>
 ## 데이터 준비 / 모델 학습
 
 - 실습에 사용할 네이버 영화 리뷰 데이터를 다운로드 합니다.([https://github.com/e9t/nsmc](https://github.com/e9t/nsmc))
@@ -41,7 +40,7 @@ pip install -r requirements.txt
 ```bash
 python train_ml.py
 ```
-
+<br>
 ```bash
 28-Oct-22 18:54:05 - Downloaded from https://raw.githubusercontent.com/e9t/nsmc/master/ratings_train.txt
 28-Oct-22 18:54:06 - Downloaded from https://raw.githubusercontent.com/e9t/nsmc/master/ratings_test.txt
@@ -53,7 +52,7 @@ python train_ml.py
 28-Oct-22 18:54:19 - Saved model to `model/ml_model.pkl`
 28-Oct-22 18:54:19 - Elapsed time : 0:00:17.325072
 ```
-
+<br><br>
 ## 모델 핸들러
 
 - `model.py`
@@ -93,7 +92,7 @@ class MLModelHandler(ModelHandler):
 
         return data
 ```
-
+<br><br>
 ## Flask 모델 서빙
 
 - 학습한 모델을 불러와서 `Flask` 프레임워크를 사용하여 서빙합니다.
@@ -148,7 +147,7 @@ async def predict(request: Union[RequestModelString, RequestModelStringList]):
 
     return ResponseModel(prediction=result)
 ```
-
+<br><br>
 ## 클라이언트
 
 - 서빙된 모델을 클라이언트 코드를 활용하여 테스트합니다.
