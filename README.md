@@ -1,8 +1,27 @@
-# kdt-ai-aws
+kdt-ai-aws
 
-[4기] K-Digital Training: 프로그래머스 인공지능 데브코스
+# K-Digital Training: 프로그래머스 인공지능 데브코스
 
 AWS를 활용한 인공지능 모델 배포 강의 실습 코드
+
+## AWS 실습 개발환경 준비
+
+1. Miniconda를 설치합니다.
+
+```bash
+wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh
+
+bash Miniconda3-latest-Linux-x86_64.sh
+```
+
+2. 실습 repo를 다운로드합니다.
+
+```bash
+git clone https://github.com/sackoh/kdt-ai-aws
+
+cd kdt-ai-aws
+```
+
 
 ## 파이썬 패키지 설치
 
