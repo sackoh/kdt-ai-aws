@@ -40,7 +40,7 @@ pip install -r requirements.txt
 ```bash
 python train_ml.py
 ```
-<br>
+
 ```bash
 28-Oct-22 18:54:05 - Downloaded from https://raw.githubusercontent.com/e9t/nsmc/master/ratings_train.txt
 28-Oct-22 18:54:06 - Downloaded from https://raw.githubusercontent.com/e9t/nsmc/master/ratings_test.txt
