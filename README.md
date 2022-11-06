@@ -19,14 +19,13 @@ AWS를 활용한 인공지능 모델 배포 강의 실습
     cd kdt-ai-aws
     ```
 
-<br>
+
 ## 파이썬 패키지 설치
 `requirements.txt`에 있는 실습에 필요한 라이브러리를 설치합니다.
 ```bash
 pip install --no-cache-dir -r requirements.txt
 ```
 
-<br>
 ## 데이터준비 / 모델학습 코드의 내부 프로세스
 1. 실습에 사용할 네이버 영화 리뷰 데이터를 다운로드 합니다.
   ([https://github.com/e9t/nsmc](https://github.com/e9t/nsmc))
@@ -50,7 +49,6 @@ python train_ml.py
 28-Oct-22 18:54:19 - Elapsed time : 0:00:17.325072
 ```
 
-<br>
 ## 모델 핸들러
 - `model.py`
 - 학습한 모델을 사용하여 실제로 들어오는 데이터를 추론해내기 위한 핸들러를 개발합니다.
@@ -86,7 +84,6 @@ class MLModelHandler(ModelHandler):
         ...
 ```
 
-<br>
 ## Flask 모델 서빙
 - 학습한 모델을 불러와서 `Flask` 프레임워크를 사용하여 서빙합니다.
 - `model.py`에서 만든 핸들러를 불러오고, 입력 값으로부터 추론한 결과를 전달하는 코드를 개발합니다.
