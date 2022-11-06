@@ -12,10 +12,11 @@ def predict():
     body = request.get_json()
     text = body.get('text', '')
     text = [text] if isinstance(text, str) else text
-    do_fast = body.get('do_fast', True)
+    model_type = body.get('model_type', 'ml')
+    use_gpu = body.get('use_gpu', False)
 
     # model inference [2 LINES]
-    if do_fast:
+    if model_type == 'ml:
         pass
     else:
         pass
