@@ -14,7 +14,6 @@ def predict():
     text = body.get('text', '')
     text = [text] if isinstance(text, str) else text
     model_type = body.get('model_type', 'ml')
-    use_gpu = body.get('use_gpu', False)
 
     # model inference [2 LINES]
     if model_type == 'ml:
