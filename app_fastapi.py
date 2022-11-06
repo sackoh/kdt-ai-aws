@@ -14,7 +14,6 @@ app = FastAPI()
 class RequestModel(BaseModel):
     text: Union[str, List[str]]
     model_type: str
-    use_gpu: Union[bool, None]
 
 class ResponseModel(BaseModel):
     # prediction: {"label":"negative", "score":0.9752}
@@ -31,10 +30,9 @@ async def predict(request: RequestModel):
     text = request.text
     text = [text] if isinstance(text, str) else text
     model_type = request.model_type
-    use_gpu = request.use_gpu
 
     # model inference [2 LINES]
-    if model_type == 'ml' or not use_gpu:
+    if model_type == 'ml':
         ...
     else:
         ...
