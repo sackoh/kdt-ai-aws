@@ -26,30 +26,26 @@ class MLModelHandler(ModelHandler):
 
     def initialize(self, ):
         # De-serializing model and loading vectorizer
+        ...
         
-        pass
-
-    def preprocess(self, data):
+    def preprocess(self, ):
         # cleansing raw text
-
-        # vectorizing cleaned text
-
-        return data
-
-    def inference(self, data):
-        # get predictions from model as probabilities
+        ...
         
-        return data
+        # vectorizing cleaned text
+        ...
+        
+    def inference(self, ):
+        # get predictions from model as probabilities
+        ...
 
-    def postprocess(self, data):
+    def postprocess(self, ):
         # process predictions to predicted label and output format
+        ...
 
-        return data
-
-    def handle(self, data):
+    def handle(self, ):
         # do above processes
-
-        return data
+        ...
 
 
 class DLModelHandler(ModelHandler):
@@ -58,16 +54,16 @@ class DLModelHandler(ModelHandler):
         self.initialize()
 
     def initialize(self, ):
-        pass
+        ...
 
-    def preprocess(self, data):
-        return data
+    def preprocess(self, ):
+        ...
 
-    def inference(self, data):
-        return data
+    def inference(self, ):
+        ...
 
-    def postprocess(self, data):
-        return data
+    def postprocess(self, ):
+        ...
 
-    def handle(self, data):
-        return data
+    def handle(self, ):
+        ...
