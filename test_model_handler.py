@@ -14,13 +14,22 @@ class TestModelHandler(unittest.TestCase):
         for label, pred in zip(results[0], predicted):
             self.assertEqual(label, pred)
 
-    def test_dl_model_handler(self):
+    def test_dl_model_handler_gpu(self):
         predicted = ['positive', 'negative', 'positive']
-        dl_handler = DLModelHandler()
+        use_gpu = True
+        dl_handler = DLModelHandler(use_gpu)
         results = dl_handler.handle(text)
         for label, pred in zip(results[0], predicted):
             self.assertEqual(label, pred)
 
+    def test_dl_model_handler_cpu(self):
+        predicted = ['positive', 'negative', 'positive']
+        use_gpu = False
+        dl_handler = DLModelHandler(use_gpu)
+        results = dl_handler.handle(text)
+        for label, pred in zip(results[0], predicted):
+            self.assertEqual(label, pred)
 
+        
 if __name__ == '__main__':
     unittest.main()
