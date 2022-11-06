@@ -141,7 +141,7 @@ async def predict(request: Union[RequestModelString, RequestModelStringList]):
 
     return ResponseModel(prediction=result)
 ```
-<br>
+
 ## 클라이언트
 서빙된 모델을 클라이언트 코드를 활용하여 테스트합니다.
 
