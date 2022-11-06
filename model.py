@@ -54,15 +54,22 @@ class DLModelHandler(ModelHandler):
         self.initialize()
 
     def initialize(self, ):
+        # Loading tokenizer and De-serializing model
         ...
 
     def preprocess(self, ):
+        # cleansing raw text
+        ...
+        
+        # vectorizing cleaned text
         ...
 
     def inference(self, ):
+        # get predictions from model as probabilities
         ...
-
+        
     def postprocess(self, ):
+        # process predictions to predicted label and output format
         ...
 
     def handle(self, ):
