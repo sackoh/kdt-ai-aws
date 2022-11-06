@@ -7,6 +7,7 @@ import uvicorn
 app = FastAPI()
 
 # assign model handler as global variable [2 LINES]
+...
 
 
 # define request/response data type for validation
