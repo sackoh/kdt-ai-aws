@@ -1,8 +1,8 @@
 numpy
 pandas
-transformers==3.5
-scikit-learn==0.23.1
-torch==1.6
+transformers
+scikit-learn
+torch
 flask
 requests
 joblib
