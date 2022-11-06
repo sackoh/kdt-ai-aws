@@ -16,7 +16,7 @@ def predict():
     model_type = body.get('model_type', 'ml')
 
     # model inference [2 LINES]
-    if model_type == 'ml:
+    if model_type == 'ml':
         ...
     else:
         ...
